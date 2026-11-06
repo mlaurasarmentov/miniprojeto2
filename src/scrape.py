@@ -140,8 +140,6 @@ def parsear_previsao(html: str, ano: int) -> list[dict]:
     A data já vem com o ano ("2026-10-10"), então `ano` não é usado aqui;
     o parâmetro continua na assinatura original.
     """
-    if not html.strip():
-        raise ValueError("resposta vazia da API de previsão")
     dados = json.loads(html)
 
     linhas = []
@@ -224,4 +222,4 @@ def main(ano: int = 2025) -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main(ano=2026)
